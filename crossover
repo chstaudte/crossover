@@ -87,7 +87,7 @@ declare opt_keep_remote='0s'
 
 
 declare -r redstconf='^\/etc\/pve\/nodes\/(.*)\/qemu-server\/([0-9]+).conf$'
-declare -r recephimg='([a-zA-Z0-9]+)\:(.*)'
+declare -r recephimg='([a-zA-Z0-9_.-]+)\:(.*)'
 declare -r restripsnapshots='/^$/,$d'
 declare -r redateex='^([0-9]{4})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})$'
 declare -r restripansicolor='s/\x1b\[[0-9;]*m//g'
