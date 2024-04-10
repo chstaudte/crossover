@@ -272,10 +272,11 @@ function parse_opts(){
     
 }
 
-human_readable() {
-    b=${1:-0}; d=''; s=0; S=(Bytes {K,M,G,T,P,E,Z,Y}iB)
+function human_readable() {
+    b=${1:-0}; d=''; s=0; S=(Bytes KiB MiB GiB TiB PiB EiB ZiB YiB)
     while ((b > 1024)); do
-        d="$(printf ".%02d" $((b % 1024 * 100 / 1024)))"
+        m=$((b % 1024 * 100 / 1024))
+        d="$(printf ".%02d" $m)"
         b=$((b / 1024))
         let s++
     done
